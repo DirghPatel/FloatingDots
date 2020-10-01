@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Dots</title>
+    <style>
+        body{
+            position: relative;
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            background: black;
+            overflow: hidden;
+        }
+        .container{
+            position: relative;
+            height: 800px;
+            min-width: 800px;
+            margin: -100px;
+            transform-origin: left;
+            animation: changecolor 5s linear infinite;
+        }
+        .container:nth-child(odd){
+            transform-origin: right;
+        }
+        @keyframes changecolor{
+            0%{
+                transform: rotate(0deg);
+                filter: hue-rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+                filter: hue-rotate(360deg);
+            }
+        }
+        .container span{
+            position: absolute;
+            top: calc(85px * var(--i));
+            left: calc(85px * var(--i));
+            bottom: calc(85px * var(--i));
+            right: calc(85px * var(--i));
+        }
+        .container span::before{
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: -10px;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+        }
+        .container span:nth-child(1)::before{
+            background: chartreuse;
+            box-shadow: 0 0 15px chartreuse,
+                        0 0 30px chartreuse,
+                        0 0 45px chartreuse,
+                        0 0 60px chartreuse,
+                        0 0 75px chartreuse;
+        }
+        .container span:nth-child(2)::before{
+            background: red;
+            box-shadow: 0 0 15px red,
+                        0 0 30px red,
+                        0 0 45px red,
+                        0 0 60px red,
+                        0 0 75px red;
+        }
+        .container span:nth-child(3)::before{
+            background: cyan;
+            box-shadow: 0 0 15px cyan,
+                        0 0 30px cyan,
+                        0 0 45px cyan,
+                        0 0 60px cyan,
+                        0 0 75px cyan;
+        }
+        .container span:nth-child(4)::before{
+            background: yellow;
+            box-shadow: 0 0 15px yellow,
+                        0 0 30px yellow,
+                        0 0 45px yellow,
+                        0 0 60px yellow,
+                        0 0 75px yellow;
+        }
+        .container span:nth-child(5)::before{
+            background: white;
+            box-shadow: 0 0 15px white,
+                        0 0 30px white,
+                        0 0 45px white,
+                        0 0 60px white,
+                        0 0 75px white;
+        }
+        .container span:nth-child(1){
+            animation: animate 10s alternate infinite;
+        }
+        .container span:nth-child(2){
+            animation: animate 8s alternate infinite;
+        }
+        .container span:nth-child(3){
+            animation: animate 3s alternate infinite;
+        }
+        .container span:nth-child(4){
+            animation: animate 6s alternate infinite;
+        }
+        .container span:nth-child(5){
+            animation: animate 2s alternate infinite;
+        }
+        @keyframes animate{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+    </div>
+    <div class="container">
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+    </div>
+    <div class="container">
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+    </div>
+    <div class="container">
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+    </div>
+    <div class="container">
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+    </div>
+</body>
+</html>
